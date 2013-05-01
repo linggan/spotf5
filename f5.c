@@ -262,7 +262,6 @@ f5_decompress(struct jpeg_decompress_struct *jinfo, struct image *image)
 	rowstep = jinfo->output_width * jinfo->output_components;
 
 	buf = (jinfo->mem->alloc_sarray)((j_common_ptr) &jinfo, JPOOL_IMAGE, rowstep, 1);
-
 	while (jinfo->output_scanline < jinfo->output_height) {
 		jpeg_read_scanlines(jinfo, buf, 1);
 
@@ -448,16 +447,16 @@ double
 detect_f5(char *filename)
 {
 	extern struct jpeg_decompress_struct jinfo;
-	struct jpeg_decompress_struct *jnew, *jtmp;
-	struct image image;
-	struct jeasy *je, *jne;
-	double beta, ekl;
-	double minbeta, minekl;
-	int minquality;
-	int quality, verbose = 0;
-	FILE *fin;
+    struct jpeg_decompress_struct *jnew, *jtmp;
+    struct image image;
+    struct jeasy *je, *jne;
+    double beta, ekl;
+    double minbeta, minekl;
+    int minquality;
+    int quality, verbose = 0;
+    FILE *fin;
 
-	je = jpeg_prepare_blocks(&jinfo);
+    je = jpeg_prepare_blocks(&jinfo);
 
 	image.img = NULL;
 	if (f5_elim2compress) {

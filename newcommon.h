@@ -31,15 +31,17 @@
 #ifndef _COMMON_
 #define _COMMON_
 
+#include <stdint.h>
+
 struct image {
 	int x, y, depth, max;
-	u_char *img;
+	uint8_t *img;
 };
 
 void jpg_finish(void);
 void jpg_destroy(void);
 int jpg_open(char *);
-void jpg_version(int *, int *, u_int16_t *);
+void jpg_version(int *, int *, uint16_t *);
 
 int jpg_toimage(char *, struct image *);
 
@@ -54,7 +56,7 @@ int prepare_outguess(short **, int *);
 char *fgetl(char *, int, FILE *);
 int file_hasextension(char *, char *);
 
-int is_random(u_char *, int);
+int is_random(uint8_t *, int);
 
 #define TEST_BIT(x,y)		((x)[(y) / 32] & (1 << ((y) & 31)))
 #define WRITE_BIT(x,y,what)	((x)[(y) / 32] = ((x)[(y) / 32] & \
