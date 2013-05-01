@@ -22,3 +22,7 @@ A trimmed version of [stegdetect][sd] for detecting images processed with the f5
     make
 
 [sd]: https://github.com/abeluck/stegdetect
+
+### License
+
+Copyright 2002 Niels Provos <provos@citi.umich.edu>. See LICENSE for details.
