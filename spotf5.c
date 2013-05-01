@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
         argv++;
         char *name = argv[0];
 
-        printf("detecting f5 in: %s\n", name);
+        printf("looking for f5 in: %s\n", name);
 
         if (jpg_open(name) == -1) {
             printf("Couldn't open %s\n", name);
@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
             if (beta > 0.4)
                 stars++;
 
-            snprintf(tmp, sizeof(tmp), " f5[%f]", beta);
+            snprintf(tmp, sizeof(tmp), "\n\tCODE RED CODE RED:  f5[%f] DETECTED", beta);
             strlcat(outbuf, quality(tmp, stars), sizeof(outbuf));
             printf("%s\n", outbuf);
         }
