@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "f5.c"
+
+#include "f5.h"
 
 int main(int argc, char *argv[]) {
 
